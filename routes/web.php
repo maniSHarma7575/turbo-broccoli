@@ -22,4 +22,10 @@ Route::get('/test',function(){
         'name'=>request('name')
     ]);
 });
+Route::get('/about',function(){
+    
+    return view('about',[
+        'articles'=>App\Article::latest()->get()
+    ]);
+});
 Route::get('/posts/{post}','PostController@show');
