@@ -29,3 +29,5 @@ Route::get('/about',function(){
     ]);
 });
 Route::get('/posts/{post}','PostController@show');
+
+Route::get('/articles/{article}','ArticlesController@show');
