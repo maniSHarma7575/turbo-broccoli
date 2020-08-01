@@ -3,17 +3,14 @@
 @section('content')
 <div id="wrapper">
 	<div id="page" class="container">
+        @forelse($articles as $article)
 		<div id="content">
 			<div class="title">
-				<h2>{{$article->title}}</h2>
+				<a href="/articles/{{$article->id}}"><h2>{{$article->title}}</h2></a>
 			<p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
             {{$article->body}}
-			<p>
-				@foreach($article->tags as $tag)
-					<a href="/articles?tag={{$tag->name}}">{{$tag->name}}</a>
-				@endforeach
-			</p>
 		</div>
+        @endforeach
     </div>
 </div>
 @endsection
