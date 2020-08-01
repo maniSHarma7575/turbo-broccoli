@@ -3,7 +3,7 @@
 @section('content')
 <div id="wrapper">
 	<div id="page" class="container">
-        @foreach($articles as $article)
+        @forelse($articles as $article)
 		<div id="content">
 			<div class="title">
 				<a href="/articles/{{$article->id}}"><h2>{{$article->title}}</h2></a>
