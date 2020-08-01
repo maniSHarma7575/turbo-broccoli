@@ -30,4 +30,10 @@ Route::get('/about',function(){
 });
 Route::get('/posts/{post}','PostController@show');
 
+Route::post('/articles','ArticlesController@store');
+Route::get('/articles','ArticlesController@index');
+
+Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{article}','ArticlesController@show');
+Route::get('/articles/{article}/edit','ArticlesController@edit');
+Route::put('/articles/{article}','ArticlesController@update');
