@@ -24,3 +24,6 @@ Route::post('/payments/submit','PaymentsController@store')->middleware('auth');
 Route::post('/payments/purchase','PaymentsController@purchase')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/notifications','UserNotificationsController@show')->middleware('auth');
+Route::get('conversations','ConversationsController@index');
+Route::get('conversations/{conversation}','ConversationsController@show');
+Route::post('best-replies/{reply}','ConversationBestReplyController@store');
