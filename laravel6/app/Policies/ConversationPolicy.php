@@ -10,7 +10,10 @@ class ConversationPolicy
 {
     use HandlesAuthorization;
 
-   
+    public function view(User $user, Conversations $conversations)
+    {
+        return $conversations->user->is($user);
+    }
 
     /**
      * Determine whether the user can update the model.
@@ -21,7 +24,7 @@ class ConversationPolicy
      */
     public function update(User $user, Conversations $conversations)
     {
-        //
+      
         return $conversations->user->is($user);
     }
 
