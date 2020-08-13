@@ -8,6 +8,6 @@ class CountryModel extends Model
 {
     //
     protected $table="_z_country";
-
+    public $timestamps=false;
     protected $guarded=[];
 }
