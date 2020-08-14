@@ -10,10 +10,10 @@ use Validator;
 class CountryController extends Controller
 {
     //
-    public function country(){
+    public function index(){
         return response()->json(CountryModel::get(),200);
     }
-    public function countryById($id){
+    public function show($id){
         $country=CountryModel::find($id);
         if(is_null($country)){
             return response()->json(["message"=>"Record not found !"],404);
@@ -40,7 +40,7 @@ class CountryController extends Controller
         $country->update($request->all());
         return response()->json($country,200);
     }
-    public function destroy(Request $request,$id){
+    public function destroy($id){
         $country=CountryModel::find($id);
         if(is_null($country)){
             return response()->json(["message"=>"Record not found !"],404);
